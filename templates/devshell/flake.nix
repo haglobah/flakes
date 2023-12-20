@@ -29,7 +29,7 @@
           env = [
             { name = "MY_ENV_VAR"; value = "SOTRUE"; }
           ];
-          pkgs = [
+          packages = [
 
           ];
           commands = [

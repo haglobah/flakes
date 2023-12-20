@@ -13,9 +13,9 @@
         path = ./templates/racket;
         description = "A flake-parts flake with devshell and racket set up";
       };
-      vm = {
-        path = ./templates/vm;
-        description = "A flake-parts flake with devshell and vm-building capabilities set up";
+      deploy = {
+        path = ./templates/deploy;
+        description = "A flake-parts flake with devshell, vm and deployment capabilities set up";
       };
     };
   };

@@ -32,7 +32,7 @@
           packages = [
             pkgs.racket
           ];
-          devshell.setup = {
+          devshell.startup = {
             setup-langserver.text = ''raco pkg install --auto --skip-installed racket-langserver'';
             setup-pollen.text = ''raco pkg install --auto --skip-installed pollen'';
           };

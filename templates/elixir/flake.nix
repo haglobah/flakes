@@ -30,7 +30,7 @@
               # { name = "MY_ENV_VAR"; value = "SOTRUE"; }
           ];
           packages = [
-            pkgs.elixir_1_15
+            pkgs.beam.packages.erlangR26.elixir_1_16
             pkgs.gnumake
             pkgs.gcc
           ] ++ pkgs.lib.optionals pkgs.stdenv.isLinux [ pkgs.inotify-tools ];

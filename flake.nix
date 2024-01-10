@@ -13,6 +13,10 @@
         path = ./templates/racket;
         description = "A flake-parts flake with devshell and racket set up";
       };
+      pollen = {
+        path = ./templates/pollen;
+        description = "A flake-parts flake with devshell, racket and pollen set up";
+      };
       node = {
         path = ./templates/node;
         description = "A flake-parts flake with devshell and nodejs set up";

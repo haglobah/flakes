@@ -32,8 +32,11 @@
           packages = [
             pkgs.racket
           ];
+          devshell.setup = {
+            setup-langserver.text = ''raco pkg install --auto --skip-installed racket-langserver'';
+          };
           commands = [
-            { name = "r"; command = "racket"; help = "Run racket interactively";}
+            { name = "r"; command = "racket"; help = "Run racket interactively"; }
           ];
         };
       };

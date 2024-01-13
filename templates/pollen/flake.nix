@@ -33,8 +33,8 @@
             pkgs.racket
           ];
           devshell.startup = {
-            setup-langserver.text = ''raco pkg install --auto --skip-installed racket-langserver'';
-            setup-pollen.text = ''raco pkg install --auto --skip-installed pollen'';
+            install-langserver.text = ''raco pkg install --auto --skip-installed racket-langserver'';
+            install-pollen.text = ''raco pkg install --auto --skip-installed pollen'';
           };
           commands = [
             { name = "rps"; command = "raco pollen start"; help = "Run the pollen web server"; }

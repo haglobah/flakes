@@ -21,6 +21,10 @@
         path = ./templates/node;
         description = "A flake-parts flake with devshell and nodejs set up";
       };
+      ruby = {
+        path = ./templates/ruby;
+        description = "A flake-parts flake with devshell and ruby set up";
+      };
       deploy = {
         path = ./templates/deploy;
         description = "A flake-parts flake with devshell, vm and deployment capabilities set up";

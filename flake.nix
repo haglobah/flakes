@@ -9,6 +9,10 @@
         path = ./templates/elixir;
         description = "A flake-parts flake with devshell and elixir set up";
       };
+      ocaml = {
+        path = ./templates/ocaml;
+        description = "A flake-parts flake with devshell and ocaml set up, based on 9glenda/ocaml-flake";
+      };
       racket = {
         path = ./templates/racket;
         description = "A flake-parts flake with devshell and racket set up";

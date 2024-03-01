@@ -27,17 +27,16 @@
         packages.default = pkgs.hello;
         devshells.default = {
           env = [
-              # { name = "MY_ENV_VAR"; value = "SOTRUE"; }
+            # { name = "MY_ENV_VAR"; value = "SOTRUE"; }
           ];
           packages = [
-            pkgs.racket
+            pkgs.ruby
           ];
           devshell.startup = {
-            install-langserver.text = ''raco pkg install --auto --skip-installed racket-langserver'';
-            install-pollen.text = ''raco pkg install --auto --skip-installed pollen'';
+            # install-stuff.text = "gem install <this-pkg>";
           };
           commands = [
-            { name = "rps"; command = "raco pollen start"; help = "Run the pollen web server"; }
+            # { name = "devshell-test"; command = "echo 'Is this working?'"; help = "A command to test devshell";}
           ];
         };
       };

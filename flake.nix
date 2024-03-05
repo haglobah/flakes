@@ -37,6 +37,10 @@
         path = ./templates/deploy;
         description = "A flake-parts flake with devshell, vm and deployment capabilities set up";
       };
+      cpp = {
+        path = ./templates/cpp;
+        description = "A flake-parts flake with devshell and C++ set up";
+      };
     };
   };
 }

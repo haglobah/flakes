@@ -1,5 +1,5 @@
 {
-  description = "A project with a devshell.";
+  description = "A project with a phoenix development environment set up.";
 
   inputs = {
     nixpkgs.url = "https://flakehub.com/f/DeterminateSystems/nixpkgs-weekly/*.tar.gz";
@@ -33,7 +33,8 @@
             pkgs.beam.packages.erlangR26.elixir_1_16
             pkgs.gnumake
             pkgs.gcc
-          ];
+            pkgs.nodejs_21
+          ] ++ pkgs.lib.optionals pkgs.stdenv.isLinux [ pkgs.inotify-tools ];
           commands = [
             { name = "ie"; command = "iex -S mix"; help = "Run iex with the application loaded";}
           ];

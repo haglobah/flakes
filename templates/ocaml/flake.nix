@@ -2,7 +2,7 @@
   description = "Ocaml project using `ocaml-flake` and `flake-parts`";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "https://flakehub.com/f/DeterminateSystems/nixpkgs-weekly/*.tar.gz";
     ocaml-flake.url = "github:9glenda/ocaml-flake";
   };
 

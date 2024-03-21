@@ -17,6 +17,10 @@
         path = ./templates/ocaml;
         description = "A flake-parts flake with devshell and ocaml set up, based on 9glenda/ocaml-flake";
       };
+      haskell = {
+        path = ./templates/haskell;
+        description = "A flake-parts flake with devshell and ocaml set up, based on 9glenda/ocaml-flake";
+      };
       python = {
         path = ./templates/python;
         description = "A flake-parts flake with devshell and python set up – packages can be added via the 'standard' python way on Nix(OS)";

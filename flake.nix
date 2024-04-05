@@ -5,6 +5,10 @@
         path = ./templates/devshell;
         description = "A flake-parts flake with devshell set up";
       };
+      basic-home-manager = {
+        path = ./templates/basic-home-manager;
+        description = "A flake with a home-manager configuration set up";
+      };
       elixir = {
         path = ./templates/elixir;
         description = "A flake-parts flake with devshell and elixir set up";

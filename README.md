@@ -4,12 +4,18 @@ As it might have been apparent from the name: To use this repository, you need t
 
 1. If you haven't done it already, [install Nix](https://zero-to-nix.com/start/install).
 2. Have a look at all the templates available (or have a look [here](templates/)):
-```
+```bash
 $ nix flake show github:haglobah/flakes
 ```
-3. Then, clone a flake template that interests you:
+3. Then, clone a flake template that interests you. This copies stuff into your current working directory, so you might want to jump into a new folder first.
+```bash
+$ nix flake init --template github:haglobah/flakes#TEMPLATE_NAME
 ```
-$ nix flake init --template github:haglobah/flakes#TEMPLATE_NAME # exchange with 
+So, for example:
+```bash
+$ mkdir learn-elixir
+$ cd learn-elixir
+$ nix flake init --template github:haglobah/flakes#elixir
 ```
 4. Depending on the flake: Read their README, and finish the setup.
 

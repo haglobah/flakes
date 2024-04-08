@@ -11,7 +11,7 @@ In addition to the [top-level README](../../README.md), to get up and running, y
 3. Then, to instantiate your new home-manager configuration, run:
 ```bash
 $ nix shell nixpkgs#home-manager
-$ home-manager switch switch --flake .
+$ home-manager switch --flake .
 ```
 
 Aand that should be it. Enjoy!

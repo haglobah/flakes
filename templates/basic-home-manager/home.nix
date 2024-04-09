@@ -1,9 +1,10 @@
 { config, pkgs, ... }:
 
 {
-  # Home Manager needs a bit of information about you and the paths it should
-  # manage.
+  # Your system username: the result of `$ whoami`
   home.username = "your-username";
+
+  # /Users/beat on macOS, /home/beat on Linux
   home.homeDirectory = "/home/your-username";
 
   # This value determines the Home Manager release that your configuration is

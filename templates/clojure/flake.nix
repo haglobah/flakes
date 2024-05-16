@@ -52,6 +52,7 @@
           ];
           packages = [
             pkgs.clojure
+            pkgs.zulu # java
           ];
           commands = [
             # { name = "ie"; command = "iex -S mix"; help = "Run iex with the application loaded";}

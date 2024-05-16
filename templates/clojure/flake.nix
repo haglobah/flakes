@@ -55,7 +55,7 @@
             pkgs.zulu # java
           ];
           commands = [
-            # { name = "ie"; command = "iex -S mix"; help = "Run iex with the application loaded";}
+            { name = "lock"; command = "nix run github:jlesquembre/clj-nix#deps-lock"; help = "(Re-)Create the deps-lock.json file";}
           ];
         };
       };

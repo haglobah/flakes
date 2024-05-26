@@ -2,7 +2,7 @@
   outputs = { self }: {
     templates = {
       devshell = {
-        path = ./templates/devshell;
+        path = ./templates/base;
         description = "A flake-parts flake with devshell set up";
       };
       basic-home-manager = {

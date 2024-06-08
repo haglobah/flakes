@@ -74,7 +74,7 @@
         };
 
         # haskell-flake doesn't set the default package, but you can do it here.
-        packages.default = self'.packages.write-a-scheme;
+        packages.default = self'.packages.the-package;
       };
     };
 }

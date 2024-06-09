@@ -3,77 +3,38 @@
 
   inputs = {
     nixpkgs.url = "https://flakehub.com/f/DeterminateSystems/nixpkgs-weekly/*.tar.gz";
-    mission-control.url = "github:Platonic-Systems/mission-control";
-    flake-root.url = "github:srid/flake-root";
-    haskell-flake.url = "github:srid/haskell-flake";
+    devshell.url = "github:numtide/devshell";
+    devshell.inputs.nixpkgs.follows = "nixpkgs";
   };
-  outputs = inputs@{ self, nixpkgs, flake-parts, ... }:
+  outputs = inputs@{ flake-parts, ... }:
     flake-parts.lib.mkFlake { inherit inputs; } {
-      systems = nixpkgs.lib.systems.flakeExposed;
+
       imports = [
-        inputs.haskell-flake.flakeModule
-        inputs.flake-root.flakeModule
-        inputs.mission-control.flakeModule
+        inputs.devshell.flakeModule
       ];
 
-      perSystem = { config, self', pkgs, ... }: {
+      systems = [ "x86_64-linux" "aarch64-linux" "aarch64-darwin" "x86_64-darwin" ];
+      perSystem = { config, self', inputs', pkgs, system, ... }: {
 
-        # Typically, you just want a single project named "default". But
-        # multiple projects are also possible, each using different GHC version.
-        haskellProjects.default = {
-          # The base package set representing a specific GHC version.
-          # By default, this is pkgs.haskellPackages.
-          # You may also create your own. See https://community.flake.parts/haskell-flake/package-set
-          # basePackages = pkgs.haskellPackages;
+        devshells.default = {
+          env = [
 
-          # Extra package information. See https://community.flake.parts/haskell-flake/dependency
-          #
-          # Note that local packages are automatically included in `packages`
-          # (defined by `defaults.packages` option).
-          #
-          packages = {
-            # aeson.source = "1.5.0.0"; # Hackage version override
-            # shower.source = inputs.shower;
+          ];
+
+          packages = with pkgs; [
+            pkgs.haskell.compiler."ghc94"
+            pkgs.cabal-install
+            pkgs.haskell.packages."ghc94".haskell-language-server
+          ];
+
+          devshell.startup = {
+            cabal-update.text = ''cabal update'';
           };
-          settings = {
-            #  aeson = {
-            #    check = false;
-            #  };
-            #  relude = {
-            #    haddock = false;
-            #    broken = false;
-            #  };
-          };
-
-          autoWire = ["packages" "checks" "apps"];
-          devShell = {
-            # Enabled by default
-            # enable = true;
-
-            # Programs you want to make available in the shell.
-            # Default programs can be disabled by setting to 'null'
-            # tools = hp: { fourmolu = hp.fourmolu; ghcid = null; };
-
-            hlsCheck.enable = pkgs.stdenv.isDarwin; # On darwin, sandbox is disabled, so HLS can use the network.
-          };
-        };
-
-        mission-control = {
-          scripts = {
-            nr = { exec = "nix run . -- "; description = "nix run Haskell binary"; };
-            nl = { exec = "nix run -L . -- "; description = "nix run Haskell binary with logging enabled";};
-          };
-        };
-
-        devShells.default = pkgs.mkShell {
-          inputsFrom = [
-            config.haskellProjects.default.outputs.devShell
-            config.flake-root.devShell
-            config.mission-control.devShell
+          commands = [
+            { name = "cr"; command = "cabal run "; help = "Alias for 'cabal run'"; }
           ];
         };
 
-        # haskell-flake doesn't set the default package, but you can do it here.
         packages.default = self'.packages.the-package;
       };
     };

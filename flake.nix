@@ -23,7 +23,11 @@
       };
       haskell = {
         path = ./templates/haskell;
-        description = "A flake-parts flake with devshell and ocaml set up, based on 9glenda/ocaml-flake";
+        description = "A flake-parts flake with devshell, ghc, cabal and hls set up";
+      };
+      haskell-template = {
+        path = ./templates/haskell-template;
+        description = "A flake-parts flake with devshell and haskell set up, based on srid/haskell-flake";
       };
       python = {
         path = ./templates/python;

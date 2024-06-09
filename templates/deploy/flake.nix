@@ -24,28 +24,40 @@
         # system.
 
         # Equivalent to  inputs'.nixpkgs.legacyPackages.hello;
-        packages.default = pkgs.hello;
-        devshells.default = {
-          env = [
-            # { name = "MY_ENV_VAR"; value = "SOTRUE"; }
-          ];
-          packages = [
-            # pkgs.racket
-          ];
-          commands = [
-            # { name = "r"; command = "racket"; help = "Run racket interactively";}
-          ];
-        };
+        # packages.default = pkgs.hello;
+        devshells.default = ./nix/devshell.nix
       };
       flake =
       let 
-
+        system = "x86_64-linux";
       in 
       {
         # The usual flake attributes can be defined here, including system-
         # agnostic ones like nixosModule and system-enumerating ones, although
         # those are more easily expressed in perSystem.
-
+        nixosConfigurations = {
+          your-system-name = nixpkgs.lib.nixosSystem {
+            inherit system;
+            modules = [
+              ./nix/configuration.nix
+              agenix.nixosModules.default
+              {
+                environment.systemPackages = [ agenix.packages.${system}.default ];
+              }
+            ];
+          };
+          test-vm = nixpkgs.lib.nixosSystem {
+            inherit system;
+            modules = [
+              ./nix/configuration.nix
+              ./nix/colab-vm.nix
+              agenix.nixosModules.default
+              {
+                environment.systemPackages = [ agenix.packages.${system}.default ];
+              }
+            ];
+          };
+        };
       };
     };
 }

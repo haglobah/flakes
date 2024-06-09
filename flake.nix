@@ -2,12 +2,16 @@
   outputs = { self }: {
     templates = {
       devshell = {
-        path = ./templates/devshell;
+        path = ./templates/base;
         description = "A flake-parts flake with devshell set up";
       };
       basic-home-manager = {
         path = ./templates/basic-home-manager;
         description = "A flake with a home-manager configuration set up";
+      };
+      clojure = {
+        path = ./templates/clojure;
+        description = "A flake-parts flake with devshell, clojure, and clj-nix set up";
       };
       elixir = {
         path = ./templates/elixir;

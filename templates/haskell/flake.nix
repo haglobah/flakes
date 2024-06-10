@@ -28,10 +28,11 @@
           ];
 
           devshell.startup = {
-            cabal-update.text = ''cabal update'';
+            # cabal-update.text = ''cabal update'';
           };
           commands = [
             { name = "cr"; command = "cabal run "; help = "Alias for 'cabal run'"; }
+            { name = "cu"; command = "cabal update"; help = "'cabal update'"; }
           ];
         };
 

@@ -15,7 +15,7 @@
   <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta property="og:locale" value="en_US">
 	<meta property="og:type" value="website">
 	<meta property="og:site_name" content="◊|title|" >
@@ -34,7 +34,7 @@
 	<meta property="twitter:url" value="◊|url|" >
 	<meta property="twitter:image" value="◊|image-path|" >
 
-    <title>◊|title|</title>
+	<title>◊|title|</title>
 	<meta name="description" content="◊|description|" >
 	<link rel="icon" type="image/x-icon" href="◊|icon-path|">
 

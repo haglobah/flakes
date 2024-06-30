@@ -54,7 +54,7 @@
             inherit system;
             modules = [
               ./nix/configuration.nix
-              ./nix/colab-vm.nix
+              ./nix/vm.nix
               agenix.nixosModules.default
               {
                 environment.systemPackages = [ agenix.packages.${system}.default ];

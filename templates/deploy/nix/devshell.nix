@@ -1,5 +1,9 @@
 { config, self', inputs', pkgs, system, ... }:
 {
+  imports = [
+    ./pkgs.nix
+  ];
+
   config = {
     packages = config.self-packages;
 

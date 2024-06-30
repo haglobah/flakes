@@ -3,11 +3,15 @@
 
   inputs = {
     nixpkgs.url = "https://flakehub.com/f/DeterminateSystems/nixpkgs-weekly/*.tar.gz";
+    
     devshell.url = "github:numtide/devshell";
     devshell.inputs.nixpkgs.follows = "nixpkgs";
+
+    agenix.url = "github:ryantm/agenix";
+    agenix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs@{ flake-parts, ... }:
+  outputs = inputs@{ nixpkgs, flake-parts, agenix, ... }:
     flake-parts.lib.mkFlake { inherit inputs; } {
       imports = [
         inputs.devshell.flakeModule

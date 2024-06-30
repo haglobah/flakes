@@ -25,7 +25,7 @@
 
         # Equivalent to  inputs'.nixpkgs.legacyPackages.hello;
         # packages.default = pkgs.hello;
-        devshells.default = ./nix/devshell.nix
+        devshells.default = ./nix/devshell.nix;
       };
       flake =
       let 

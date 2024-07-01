@@ -30,7 +30,7 @@
             # { name = "MY_ENV_VAR"; value = "SOTRUE"; }
           ];
           packages = [
-            pkgs.nodejs_21
+            pkgs.nodejs_22
           ];
           commands = [
             # { name = "devshell-test"; command = "echo 'Is this working?'"; help = "A command to test devshell";}

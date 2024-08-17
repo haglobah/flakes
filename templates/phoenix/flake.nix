@@ -30,7 +30,7 @@
               # { name = "MY_ENV_VAR"; value = "SOTRUE"; }
           ];
           packages = [
-            pkgs.beam.packages.erlangR26.elixir_1_16
+            pkgs.beam.packages.erlang_26.elixir_1_16
             pkgs.gnumake
             pkgs.gcc
             pkgs.nodejs_21

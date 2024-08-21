@@ -33,7 +33,7 @@
             pkgs.beam.packages.erlang_26.elixir_1_16
             pkgs.gnumake
             pkgs.gcc
-            pkgs.nodejs_21
+            pkgs.nodejs_22
           ] ++ pkgs.lib.optionals pkgs.stdenv.isLinux [ pkgs.inotify-tools ];
           commands = [
             { name = "ie"; command = "iex -S mix"; help = "Run iex with the application loaded";}

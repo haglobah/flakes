@@ -56,6 +56,3 @@ Software Architect <a href="https://active-group.de">@active group</a><br>
 </div>
 
 <img src="https://avatars.githubusercontent.com/u/83699832?s=400&u=02b324dc21d8da4d6f179daaf7e14f4b4d01cac5&v=4" class="rounded-full w-40 abs-tr mt-16 mr-12"/>
-
-
----

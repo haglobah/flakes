@@ -73,6 +73,10 @@
         path = ./templates/ruby;
         description = "flake-parts with devshell and ruby";
       };
+      slidev-template = {
+        path = ./templates/slidev-template;
+        description = "slidev starter project with nodejs flake";
+      };
     };
   };
 }

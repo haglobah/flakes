@@ -73,8 +73,12 @@
         path = ./templates/ruby;
         description = "flake-parts with devshell and ruby";
       };
-      slidev-template = {
-        path = ./templates/slidev-template;
+      slidev-bare = {
+        path = ./templates/slidev-bare;
+        description = "slidev starter project without flake";
+      };
+      slidev-separate = {
+        path = ./templates/slidev-separate;
         description = "slidev starter project with nodejs flake";
       };
     };

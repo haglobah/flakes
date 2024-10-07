@@ -17,7 +17,7 @@ curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix 
 2. Fork this repo
 3. Enter the nix development environment (from inside the repo):
 ```bash
-cd functional-coders.github.io && nix develop
+cd <repo-name> && nix develop
 ```
 4. Run the project server
 ```bash

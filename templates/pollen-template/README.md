@@ -6,7 +6,6 @@ Written in [Racket](https://racket-lang.org) and [Pollen](https://pollenpub.com)
 
 # Setup
 
-
 ## 1) Nix
 The easiest way to get started with local development is to [use Nix](https://zero-to-nix.com/start/install):
 
@@ -14,27 +13,25 @@ The easiest way to get started with local development is to [use Nix](https://ze
 ```bash
 curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
 ```
-2. Fork this repo
-3. Enter the nix development environment (from inside the repo):
+2. Enter the nix development environment (from inside the repo):
 ```bash
 cd <repo-name> && nix develop
 ```
-4. Run the project server
+3. Run the project server
 ```bash
 raco pollen start
 ```
-5. edit files, reload the browser window, see the changes
+4. edit files, reload the browser window, see the changes
 
 ## 2) 'Normal' install
 1. Download & Install [Racket](https://racket-lang.org): [download.racket-lang.org](https://download.racket-lang.org)
 2. Install [Pollen](https://pollenpub.com):
 ```
-λ raco pkg install --auto --skip-installed pollen racket-langserver
+raco pkg install --auto --skip-installed pollen racket-langserver
 ```
-3. Fork this repo.
-4. Start Pollens' project server from the project root:
+3. Start Pollens' project server from the project root:
 ```
-λ raco pollen start 
+raco pollen start 
 ```
-5. edit some file; reload your browser window; see the change.
+4. edit some file; reload your browser window; see the change.
 

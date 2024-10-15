@@ -1,14 +1,8 @@
 ◊(define title "The page title")
 ◊(define description "Here, you can see .. nothing. This is its description.")
 ◊(define image-path "")
-◊(define url "https://haglobah.github.io/me/")
+◊(define url "https://example.com/")
 ◊(define icon-path "")
-
-◊(define space-cadet "#282D3F")
-◊(define cornflower "#6E98E8")
-◊(define cornflower-light "#97b6f0")
-◊(define sienna "#DC755C")
-◊(define sienna-light "#ecb1a2")
 
 <!DOCTYPE html>
 <html lang="de-DE" class="sm:scroll-smooth">
@@ -38,14 +32,14 @@
 	<meta name="description" content="◊|description|" >
 	<link rel="icon" type="image/x-icon" href="◊|icon-path|">
 
-	<link rel="stylesheet" href="fonts.css"> 
-	<script src="https://cdn.tailwindcss.com"></script>
+	<link rel="stylesheet" href="fonts.css">
+	<link rel="stylesheet" href="uno.css">
   </head>
-  ◊(->html `(body ([class "bg-[#282D3F] leading-relaxed text-zinc-400 antialiased
-						   font-fira-sans
-						   selection:bg-[#ecb1a2] selection:text-[#282d3f]"])
-	              (div ([class "mx-auto min-h-screen max-w-screen-xl px-6 py-12
-				  				md:px-12 md:py-20 lg:px-24 lg:py-0"])
-					   ,doc)))
+  ◊(->html
+		◊body[#:class "bg-space-cadet leading-relaxed text-zinc-400 antialiased font-fira-sans selection:bg-sienna-light selection:text-space-cadet"]{
+			◊div[#:class "mx-auto min-h-screen max-w-screen-xl px-6 py-12 md:px-12 md:py-20 lg:px-24 lg:py-0"]{
+				◊|doc|
+			}
+		})
   </body>
 </html>

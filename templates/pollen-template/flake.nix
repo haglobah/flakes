@@ -31,13 +31,15 @@
           ];
           packages = [
             pkgs.racket
+            pkgs.nodejs_22
           ];
           devshell.startup = {
             install-langserver.text = ''raco pkg install --auto --skip-installed racket-langserver'';
             install-pollen.text = ''raco pkg install --auto --skip-installed pollen'';
+            install-node-deps.text = ''npm install'';
           };
           commands = [
-            { name = "rps"; command = "raco pollen start"; help = "Run the pollen web server"; }
+            { name = "run"; command = "npm run dev"; help = "Run everything: The Pollen web server & unocss in file watching mode"; }
           ];
         };
       };

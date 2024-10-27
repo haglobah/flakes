@@ -31,10 +31,14 @@
           ];
           packages = [
             pkgs.nodejs_22
+            pkgs.pnpm
           ];
           commands = [
-            # { name = "devshell-test"; command = "echo 'Is this working?'"; help = "A command to test devshell";}
+            { name = "run"; command = "pnpm dev"; help = "A command to test devshell";}
           ];
+          devshell.startup = {
+            install-npm-dependencies.text = ''pnpm install'';
+          }
         };
       };
       flake = {

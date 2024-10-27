@@ -19,7 +19,7 @@ cd <repo-name> && nix develop
 ```
 4. Run everything: The pollen web server and the unocss watcher 
 ```bash
-npm run dev
+pnpm dev
 ```
 5. edit files, reload the browser window, see the changes
 
@@ -33,10 +33,10 @@ raco pkg install --auto --skip-installed pollen racket-langserver
 3. Download and install nodejs as described [here](https://nodejs.org/en/download/package-manager).
 4. Install the necessary node dependencies:
 ```shell
-npm install
+pnpm install
 ```
 5. Run everything: The pollen web server and the unocss watcher 
 ```bash
-npm run dev
+pnpm dev
 ```
 6. edit files, reload the browser window, see the changes

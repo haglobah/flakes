@@ -19,6 +19,10 @@
       };
       clojure = {
         path = ./templates/clojure;
+        description = "flake-parts with devshell and clojure";
+      };
+      clojure-template = {
+        path = ./templates/clojure-template;
         description = "flake-parts with devshell, clojure, and clj-nix";
       };
       cpp = {

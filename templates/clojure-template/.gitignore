@@ -3,5 +3,6 @@
 .calva/
 .nrepl-port
 .lsp/
-.direnv/
+.direnv
+.pre-commit-config.yaml/
 result*

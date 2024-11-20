@@ -5,6 +5,8 @@
     nixpkgs.url = "https://flakehub.com/f/DeterminateSystems/nixpkgs-weekly/*.tar.gz";
     devshell.url = "github:numtide/devshell";
     devshell.inputs.nixpkgs.follows = "nixpkgs";
+    clj-nix.url = "github:jlesquembre/clj-nix";
+    clj-nix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = inputs@{ flake-parts, clj-nix, ... }:
@@ -23,7 +25,27 @@
         # module parameters provide easy access to attributes of the same
         # system.
 
-        # packages.default = {};
+        # Equivalent to  inputs'.nixpkgs.legacyPackages.hello;
+        packages = {
+          default = clj-nix.lib.mkCljApp {
+            inherit pkgs;
+
+            modules = [
+              # Option list:
+              # https://jlesquembre.github.io/clj-nix/options/
+              {
+                projectSrc = ./.;
+                name = "me.lafuente/cljdemo";
+                main-ns = "hello.core";
+
+                nativeImage.enable = true;
+
+                # customJdk.enable = true;
+              }
+            ];
+          };
+        };
+        
         devshells.default = {
           env = [
               # { name = "MY_ENV_VAR"; value = "SOTRUE"; }
@@ -33,7 +55,7 @@
             pkgs.zulu # java
           ];
           commands = [
-            # { name = "lock"; command = "nix run github:jlesquembre/clj-nix#deps-lock"; help = "(Re-)Create the deps-lock.json file";}
+            { name = "lock"; command = "nix run github:jlesquembre/clj-nix#deps-lock"; help = "(Re-)Create the deps-lock.json file";}
           ];
         };
       };

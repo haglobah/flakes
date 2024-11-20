@@ -1,4 +1,6 @@
-# Neckarthon-2024: Beiteiligungsprozesse in Tübingen
+# ...
+
+The website of ...
 
 Written in [Racket](https://racket-lang.org), [Pollen](https://pollenpub.com) and [unocss](https://unocss.dev), built with [Nix](https://nixos.org), hosted on GitHub Pages.
 
@@ -26,7 +28,7 @@ This should show you a Menu of available commands (you can show it again by exec
 ```bash
 run
 ```
-4. edit files, reload the browser window, see the changes
+5. edit files, reload the browser window, see the changes
 
 ## 2) 'Normal' install
 

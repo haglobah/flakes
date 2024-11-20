@@ -1,11 +1,19 @@
 {
   "scripts": {
+<<<<<<< HEAD
     "watch:pollen": "raco pollen reset && raco pollen start",
     "watch:css": "unocss --watch",
     "dev": "concurrently \"npm run watch:pollen\" \"npm run watch:css\""
   },
   "dependencies": {
     "@iconify-json/heroicons": "^1.2.1",
+=======
+    "watch:pollen": "racket watch-pollen.rkt",
+    "watch:css": "unocss --watch",
+    "dev": "concurrently \"raco pollen start\" \"npm run watch:css\""
+  },
+  "dependencies": {
+>>>>>>> 7aa911fd54914c75fc479cda26f7dc7392485099
     "concurrently": "^9.0.1",
     "unocss": "^0.63.3"
   }

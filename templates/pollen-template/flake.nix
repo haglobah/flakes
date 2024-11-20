@@ -32,14 +32,25 @@
           packages = [
             pkgs.racket
             pkgs.nodejs_22
+<<<<<<< HEAD
+=======
+            pkgs.pnpm
+>>>>>>> 7aa911fd54914c75fc479cda26f7dc7392485099
           ];
           devshell.startup = {
             install-langserver.text = ''raco pkg install --auto --skip-installed racket-langserver'';
             install-pollen.text = ''raco pkg install --auto --skip-installed pollen'';
+<<<<<<< HEAD
             install-node-deps.text = ''npm install'';
           };
           commands = [
             { name = "run"; command = "npm run dev"; help = "Run everything: The pollen web server & unocss in file watching mode"; }
+=======
+            install-node-deps.text = ''pnpm install'';
+          };
+          commands = [
+            { name = "run"; command = "pnpm dev"; help = "Run everything: The Pollen web server & unocss in file watching mode"; }
+>>>>>>> 7aa911fd54914c75fc479cda26f7dc7392485099
           ];
         };
       };

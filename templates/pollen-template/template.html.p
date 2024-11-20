@@ -1,11 +1,7 @@
 ◊(define title "Tübocracy – Tübiger:innen informieren Politik")
 ◊(define description "Was, wenn wir einfach die Weisheit von allen nehmen?")
 ◊(define image-path "")
-<<<<<<< HEAD
-◊(define url "https://haglobah.github.io/tuebocracy")
-=======
 ◊(define url "https://example.com/")
->>>>>>> 7aa911fd54914c75fc479cda26f7dc7392485099
 ◊(define icon-path "")
 
 <!DOCTYPE html>
@@ -36,7 +32,6 @@
 	<meta name="description" content="◊|description|" >
 	<link rel="icon" type="image/x-icon" href="◊|icon-path|">
 
-<<<<<<< HEAD
 	<link rel="stylesheet" href="assets/preflight.css">
 	<link rel="stylesheet" href="assets/uno.css">
 	<script src="assets/main.js"></script>
@@ -77,17 +72,4 @@
 			</div>
 		</footer>
 	</body>
-=======
-	<link rel="stylesheet" href="preflight.css">
-	<link rel="stylesheet" href="fonts.css">
-	<link rel="stylesheet" href="uno.css">
-  </head>
-  ◊(->html
-		◊body[#:class "bg-space-cadet leading-relaxed text-zinc-400 antialiased font-fira-sans selection:bg-sienna-light selection:text-space-cadet"]{
-			◊div[#:class "mx-auto min-h-screen max-w-screen-xl px-6 py-12 md:px-12 md:py-20 lg:px-24 lg:py-0"]{
-				◊|doc|
-			}
-		})
-  </body>
->>>>>>> 7aa911fd54914c75fc479cda26f7dc7392485099
 </html>

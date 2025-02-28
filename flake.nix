@@ -17,7 +17,7 @@
         pre-commit = {
           settings.hooks = {
             alejandra.enable = true;
-            deadnix.enable = true;
+            # deadnix.enable = true;
           };
         };
         devshells.default = {

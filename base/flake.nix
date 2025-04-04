@@ -15,7 +15,7 @@
     flake-parts.lib.mkFlake {inherit inputs;} {
       imports = [
         inputs.devshell.flakeModule
-        ../../modules/unfree.nix
+        ../modules/unfree.nix
         # To import a flake module
         # 1. Add foo to inputs
         # 2. Add foo as a parameter to the outputs function

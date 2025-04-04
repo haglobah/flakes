@@ -15,6 +15,7 @@
     flake-parts.lib.mkFlake {inherit inputs;} {
       imports = [
         inputs.devshell.flakeModule
+        ../../modules/unfree.nix
         # To import a flake module
         # 1. Add foo to inputs
         # 2. Add foo as a parameter to the outputs function
@@ -28,11 +29,8 @@
         pkgs,
         system,
         ...
-      }: {
-        _module.args.pkgs = import self.inputs.nixpkgs {
-          inherit system;
-          config.allowUnfree = true;
-        };
+      }:
+      {
         # Per-system attributes can be defined here. The self' and inputs'
         # module parameters provide easy access to attributes of the same
         # system.

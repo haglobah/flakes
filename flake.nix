@@ -31,7 +31,7 @@
       flake = {
         templates = {
           base = {
-            path = ./templates/base;
+            path = ./base;
             description = "flake-parts with devshell";
           };
           basic-home-manager = {

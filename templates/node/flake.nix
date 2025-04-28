@@ -20,8 +20,8 @@
       }: {
         pre-commit = {
           settings.hooks = {
-            alejandra.enable = true;
-            deadnix.enable = true;
+            alejandra.enable = false;
+            deadnix.enable = false;
           };
         };
         # Equivalent to  inputs'.nixpkgs.legacyPackages.hello;
@@ -31,23 +31,13 @@
             # { name = "MY_ENV_VAR"; value = "SOTRUE"; }
           ];
           commands = [
-            {
-              name = "run";
-              command = "pnpm dev";
-              help = "(pnpm dev):Run the development environment";
-            }
           ];
           devshell = {
             packagesFrom = [
             ];
             packages = [
               pkgs.nodejs_22
-              pkgs.pnpm
             ];
-            startup = {
-              install-npm-dependencies.text = ''pnpm install'';
-              pre-commit.text = config.pre-commit.settings.installationScript;
-            };
           };
         };
       };
